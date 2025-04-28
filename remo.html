@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Go On a Date With Me?</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #ffe6f0;
+      padding-top: 100px;
+    }
+    h1 {
+      color: #e60073;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #yes {
+      background-color: #66cc66;
+      color: white;
+    }
+    #no {
+      background-color: #ff6666;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you go on a date with me?</h1>
+  <button id="yes" onclick="alert('Yay! I can’t wait!')">Yes 💗</button>
+  <button id="no" onclick="changeButtons()">No</button>
+
+  <script>
+    let noClickCount = 0;
+
+    function changeButtons() {
+      const yesBtn = document.getElementById('yes');
+      const noBtn = document.getElementById('no');
+
+      noClickCount++;
+
+      if (noClickCount === 1) {
+        noBtn.textContent = 'Really?';
+        noBtn.style.fontSize = '16px';
+        noBtn.style.padding = '8px 16px';
+        yesBtn.style.fontSize = '22px';
+        yesBtn.style.padding = '12px 24px';
+      } else if (noClickCount === 2) {
+        noBtn.textContent = 'Are you sure?';
+        noBtn.style.fontSize = '14px';
+        noBtn.style.padding = '6px 12px';
+        yesBtn.style.fontSize = '26px';
+        yesBtn.style.padding = '14px 28px';
+      } else if (noClickCount === 3) {
+        noBtn.textContent = 'Please';
+        noBtn.style.fontSize = '13px';
+        noBtn.style.padding = '5px 10px';
+        yesBtn.style.fontSize = '30px';
+        yesBtn.style.padding = '16px 32px';
+      } else if (noClickCount === 4) {
+        noBtn.textContent = 'Last chance';
+        noBtn.style.fontSize = '12px';
+        noBtn.style.padding = '4px 8px';
+        yesBtn.style.fontSize = '36px';
+        yesBtn.style.padding = '20px 40px';
+      } else if (noClickCount >= 5) {
+        noBtn.remove();
+        yesBtn.style.fontSize = '44px';
+        yesBtn.style.padding = '24px 48px';
+      }
+    }
+  </script>
+
+</body>
+</html>
